@@ -9,7 +9,7 @@ const InputField = ({
   inputType,
   capitalize,
   value,
-  color = theme.colors.lightGrayColor,
+  color = theme.colors.whiteColor,
   height = 45,
   onChangeText,
   secure = false,
@@ -25,7 +25,7 @@ const InputField = ({
         fontFamily: theme.fontFamily.medium,
       }}
       placeholder={placeholder}
-      placeholderTextColor={theme.colors.lightGrayColor}
+      placeholderTextColor={theme.colors.whiteColor}
       secureTextEntry={secure}
       keyboardType={inputType}
       fontSize={moderateScale(13)}

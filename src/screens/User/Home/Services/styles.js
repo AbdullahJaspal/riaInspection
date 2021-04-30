@@ -9,10 +9,42 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.blackColor,
   },
+  topContainer: {
+    paddingTop: 25,
+    paddingBottom: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inspectsText: {
+    fontSize: 16,
+    alignSelf: 'center',
+    textAlign: 'center',
+    color: theme.colors.blackColor,
+    fontFamily: theme.fontFamily.bold,
+  },
+  shapeView: {
+    width: 0,
+    height: 0,
+    borderStyle: 'solid',
+    borderLeftWidth: 25,
+    borderRightWidth: 0,
+    borderBottomWidth: 30,
+    backgroundColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+  },
+  detailContainer: {
+    width: width / 4,
+    height: 30,
+    justifyContent: 'center',
+    backgroundColor: 'black',
+  },
   item: {
     marginTop: 5,
     width: width - 60,
     height: width - 180,
+    marginBottom: 5,
     borderRadius: 5,
     paddingTop: 5,
     backgroundColor: theme.colors.whiteColor,
@@ -33,6 +65,7 @@ const styles = StyleSheet.create({
   txtContainer: {
     paddingHorizontal: 5,
     backgroundColor: theme.colors.g2,
+    marginBottom: 4,
   },
   title: {
     top: 7,
@@ -54,8 +87,8 @@ const styles = StyleSheet.create({
   },
   flImgStyle: {
     alignSelf: 'center',
-    width: width / 3,
-    height: height / 8,
+    width: width / 2,
+    height: height / 6,
   },
   scrollStyles: {
     flex: 1,
@@ -63,7 +96,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   listItem: {
-    marginBottom: 20,
+    marginBottom: 35,
     borderRadius: 5,
     flexDirection: 'row',
     backgroundColor: theme.colors.whiteColor,

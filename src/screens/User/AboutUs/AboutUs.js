@@ -7,14 +7,16 @@ import styles from './styles';
 const data = [
   {
     title: 'Our Story',
-    subtitle: `Whether buying or selling a previously used car, the importance of trust and confidence cannot be overemphasized. With this in mind, having an impartial vehicle inspection will go a long way to building confidence and trust between vehicle buyers and sellers.
+    subTitle: ``,
+    description: `Whether buying or selling a previously used car, the importance of trust and confidence cannot be overemphasized. With this in mind, having an impartial vehicle inspection will go a long way to building confidence and trust between vehicle buyers and sellers.
 
 To help solve this problem, Ria Inspections was born.`,
     img: appImages.about2,
   },
   {
     title: 'Who We Are',
-    subtitle: `Providing Car Buyers with Confidence During Car Purchase. Ria Inspections is a vehicle inspection company that seeks to build trust between dealers and car buyers. We offer car dealerships, and their customers, thorough and comprehensive vehicle diagnoses to boost confidence during a car sale.
+    subTitle: `Providing Car Buyers with Confidence During Car Purchase.`,
+    description: `Ria Inspections is a vehicle inspection company that seeks to build trust between dealers and car buyers. We offer car dealerships, and their customers, thorough and comprehensive vehicle diagnoses to boost confidence during a car sale.
 
 Living in a world of uncertainty, transparency goes a long way to building trust. We understand the above and seek to help build this bond between both parties with impartial, expert inspections.
     
@@ -41,7 +43,7 @@ const AboutUs = ({navigation}) => {
           showsVerticalScrollIndicator={false}>
           <View style={styles.listItem}>
             <Text style={styles.title}>How It Works</Text>
-            <Text style={styles.subTitle}>
+            <Text style={styles.description}>
               Living in a world of uncertainty, transparency goes a long way to
               building trust. Without trust, and individual cannot respond
               confidently to the claims of others. This confidence is a must
@@ -65,7 +67,10 @@ const AboutUs = ({navigation}) => {
                 />
                 <View style={{backgroundColor: theme.colors.g2}}>
                   <Text style={styles.title}>{item.title}</Text>
-                  <Text style={styles.subTitle}>{item.subtitle}</Text>
+                  {item.subTitle === '' ? null : (
+                    <Text style={styles.subTitle}>{item.subTitle}</Text>
+                  )}
+                  <Text style={styles.description}>{item.description}</Text>
                 </View>
               </View>
             );

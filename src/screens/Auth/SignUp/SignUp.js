@@ -25,7 +25,7 @@ import {Loading} from '../../../components/Loading';
 
 // redux stuff
 import {useDispatch, useSelector} from 'react-redux';
-import {register} from '../../../redux/actions/auth';
+import {register, authLoading} from '../../../redux/actions/auth';
 
 // Validate Email...
 const validateEmail = (email) => {
@@ -43,7 +43,7 @@ const SignUp = ({navigation}) => {
 
   //   redux stuff
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.isLoading);
+  const isLoading = useSelector((state) => state.auth);
 
   const handleSignUp = async () => {
     const validation = validateData();
@@ -54,6 +54,7 @@ const SignUp = ({navigation}) => {
         password: password,
         c_password: confirmPass,
       };
+      dispatch(authLoading(true));
       dispatch(register(params, onSuccess, onError));
     }
   };

@@ -22,6 +22,7 @@ const UserHeader = (props) => {
     return (
       <View style={{flex: 1}}>
         <TouchableOpacity
+          activeOpacity={1}
           style={styles.itemContainer}
           focusable={true}
           onPress={() => {
@@ -33,12 +34,10 @@ const UserHeader = (props) => {
       </View>
     );
   };
-
   const handleLogout = async () => {
     await AsyncStorage.setItem('login', 'false');
     props.navigation.replace('Auth', {screen: 'Login'});
     return;
-    dispatch(logout(token, onSuccess, onError));
   };
 
   const onSuccess = async (res) => {
@@ -64,7 +63,7 @@ const UserHeader = (props) => {
       </View>
       {Platform.OS === 'android' ? <View style={{flex: 0.1}} /> : null}
       <DrawerContentScrollView {...props}>
-        <Section screen="Home" path={appIcons.home} title="Home" />
+        <Section screen="userHome" path={appIcons.home} title="Home" />
         <Section screen="AboutUs" path={appIcons.aboutUs} title="About Us" />
         <Section
           screen="BuyerInfo"

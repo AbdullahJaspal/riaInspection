@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
-import { moderateScale } from '../../../../constants/ScalingUnit';
+import {moderateScale} from '../../../../constants/ScalingUnit';
 import theme from '../../../../theme';
 
 const {width, height} = Dimensions.get('window');
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     alignSelf: 'center',
     color: theme.colors.whiteColor,
+    marginBottom: 20,
   },
   headingContainer: {
     height: 42,
@@ -114,6 +115,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: theme.colors.whiteColor,
     fontFamily: theme.fontFamily.medium,
+  },
+  inputText: {
+    width: '85%',
+    height: height / 6.5,
+    padding: 10,
+    paddingTop: 7,
+    textAlignVertical: 'top',
+    fontSize: 12,
+    color: theme.colors.blackColor,
+    marginBottom: 10,
+  },
+  showupCheck: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginRight: moderateScale(5),
   },
   tableCard: {
     width: '90%',
@@ -129,7 +146,7 @@ const styles = StyleSheet.create({
   tableBox: {
     width: '94%',
     margin: 10,
-    borderWidth: 1,
+    borderWidth: 0.5,
     alignSelf: 'center',
     borderColor: theme.colors.lightGrayColor,
   },

@@ -3,15 +3,12 @@ import {View, Text, Image, Platform, TouchableOpacity} from 'react-native';
 import {Divider, Icon} from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {dividerStyle} from '../../../utils/CommonStyles';
 import {appIcons, appLogos} from '../../../assets';
-import theme from '../../../theme';
 import styles from '../Admin/styles';
 
 // redux stuff
 import {useDispatch, useSelector} from 'react-redux';
-import {logout} from '../../../redux/actions/auth';
 
 const GuestHeader = (props) => {
   //   redux stuff
@@ -22,6 +19,7 @@ const GuestHeader = (props) => {
     return (
       <View style={{flex: 1}}>
         <TouchableOpacity
+          activeOpacity={1}
           style={styles.itemContainer}
           focusable={true}
           onPress={() => {
@@ -38,7 +36,6 @@ const GuestHeader = (props) => {
     await AsyncStorage.setItem('login', 'false');
     props.navigation.replace('Auth', {screen: 'Login'});
     return;
-    dispatch(logout(token, onSuccess, onError));
   };
 
   const onSuccess = async (res) => {
@@ -64,7 +61,8 @@ const GuestHeader = (props) => {
       </View>
       {Platform.OS === 'android' ? <View style={{flex: 0.1}} /> : null}
       <DrawerContentScrollView {...props}>
-        <Section screen="Home" path={appIcons.home} title="Home" />
+        {/* <Section screen="Home" path={appIcons.home} title="Home" /> */}
+        <Section screen="userHome" path={appIcons.home} title="Home" />
         <Section screen="AboutUs" path={appIcons.aboutUs} title="About Us" />
         <Section
           screen="BuyerInfo"
@@ -76,25 +74,13 @@ const GuestHeader = (props) => {
           path={appIcons.serviceIcon}
           title="Services"
         />
-        <Section screen="SignUp" path={appIcons.profile} title="Registration" />
+        <Section screen="SignUp" path={appIcons.myList} title="Registration" />
         <Section
           screen="ContactUs"
           path={appIcons.contactUs}
           title="Contact Us"
         />
       </DrawerContentScrollView>
-
-      <View style={styles.bottomDrawerSection}>
-        <MaterialIcons
-          name="logout"
-          color={theme.colors.whiteColor}
-          size={20}
-          onPress={() => handleLogout()}
-        />
-        <TouchableOpacity activeOpacity={0.7} onPress={() => handleLogout()}>
-          <Text style={styles.logoutTextStyle}>Logout</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };

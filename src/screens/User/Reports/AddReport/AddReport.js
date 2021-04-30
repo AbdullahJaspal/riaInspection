@@ -213,7 +213,7 @@ const AddReport = ({navigation}) => {
             </Text>
           </View>
         </View>
-
+       
         <View style={[styles.textPickerRow, {zIndex: 100}]}>
           <InputBox
             placeholder={'City'}
@@ -228,6 +228,7 @@ const AddReport = ({navigation}) => {
             }}
           />
         </View>
+       
         <View style={[styles.textPickerRow, {zIndex: 100}]}>
           <InputBox
             placeholder={'Dealer'}
@@ -242,22 +243,23 @@ const AddReport = ({navigation}) => {
             }}
           />
         </View>
-
+       
         <View style={[styles.pickerRow, {zIndex: 9}]}>
           <DropDown
-            label={'Select Modal'}
+            label={'Select Model'}
             zIndex={98}
             data={[]}
             width={'47%'}
             Platform={Platform.OS}
           />
           <InputBox
-            placeholder={'Edit Modal'}
+            placeholder={'Edit Model'}
             onChangeText={(val) => {
               setEditModal(val);
             }}
           />
         </View>
+       
         <View style={[styles.textPickerRow, {zIndex: 0}]}>
           <InputBox
             placeholder={'Year'}
@@ -272,6 +274,7 @@ const AddReport = ({navigation}) => {
             }}
           />
         </View>
+       
         <View style={[styles.textPickerRow, {zIndex: 100}]}>
           <InputBox
             placeholder={'Mileage'}
@@ -286,6 +289,7 @@ const AddReport = ({navigation}) => {
             }}
           />
         </View>
+      
         <View style={[styles.pickerRow1, {zIndex: 0}]}>
           <DropDown
             label={'Vehicle Type'}

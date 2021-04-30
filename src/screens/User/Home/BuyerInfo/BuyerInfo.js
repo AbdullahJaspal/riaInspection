@@ -16,10 +16,10 @@ const {width} = Dimensions.get('window');
 
 const enteries = [
   {
-    title: 'We are Expert',
+    title: 'We Are Experts',
     subtitle:
       'We do one thing and we do it well... vehicle inspections. We offer a variety of inspections and each inspection type requires the inspector to pass a rigours training course.',
-    illustration: appImages.slider1,
+    illustration: appImages.slider3,
   },
   {
     title: 'Unbiased Report',
@@ -28,10 +28,10 @@ const enteries = [
     illustration: appImages.slider2,
   },
   {
-    title: 'We are Expert',
+    title: 'Transparency',
     subtitle:
-      'We do one thing and we do it well... vehicle inspections. We offer a variety of inspections and each inspection type requires the inspector to pass a rigours training course.',
-    illustration: appImages.slider3,
+      'Know your car inside and out before you buy.',
+    illustration: appImages.slider1,
   },
 ];
 
@@ -90,6 +90,13 @@ const BuyerInfo = ({navigation}) => {
         navigation={navigation}
       />
       <View style={{flex: 1, backgroundColor: theme.colors.g1}}>
+        <View style={styles.topContainer}>
+          <Text style={[styles.inspectsText, {right: 5}]}>Why 3rd Party</Text>
+          <View style={styles.shapeView} />
+          <View style={styles.detailContainer}>
+            <Text style={[styles.inspectsText, {color: 'white'}]}>Inspection</Text>
+          </View>
+        </View>
         <View>
           <Carousel
             ref={carouselRef}

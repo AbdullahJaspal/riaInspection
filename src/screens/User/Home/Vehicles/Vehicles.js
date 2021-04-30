@@ -30,80 +30,84 @@ import {getIsDrawerOpenFromState} from '@react-navigation/drawer';
 import {getVehicals, homeLoading} from '../../../../redux/actions/home';
 import {Loading} from '../../../../components/Loading';
 
-// const data = [
-//   {
-//     name: 'Lewisville Autoplex',
-//     maker: 'JEEP',
-//     mileage: 'Facilis consectetur miles',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: '03-11-2020 to 09-01-2022',
-//     date: '03-02-2021',
-//     condition: 'Perfect',
-//   },
-//   {
-//     name: 'Lewisville Autoplex',
-//     maker: 'FORD',
-//     mileage: '204',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: 'History not found',
-//     date: '04-07-2021',
-//     condition: `No\nDamage\nDone`,
-//   },
-//   {
-//     name: 'Zeeshan Ahmad',
-//     maker: 'HONDA',
-//     mileage: '393784',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: '03-11-2020 to 09-01-2022',
-//     date: '02-15-2021',
-//     condition: 'Perfect',
-//   },
-//   {
-//     name: 'Lewisville Autoplex',
-//     maker: 'JEEP',
-//     mileage: 'Facilis consectetur miles',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: '03-11-2020 to 09-01-2022',
-//     date: '03-02-2021',
-//     condition: 'Perfect',
-//   },
-//   {
-//     name: 'Lewisville Autoplex',
-//     maker: 'FORD',
-//     mileage: '204',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: 'History not found',
-//     date: '04-07-2021',
-//     condition: `No\nDamage\nDone`,
-//   },
-//   {
-//     name: 'Zeeshan Ahmad',
-//     maker: 'HONDA',
-//     mileage: '393784',
-//     city: 'Lewisville',
-//     state: 'Texas',
-//     vin: '1C4RJEBG0LC123070',
-//     history: '03-11-2020 to 09-01-2022',
-//     date: '02-15-2021',
-//     condition: 'Perfect',
-//   },
-// ];
+const data = [
+  {
+    name: 'Lewisville Autoplex',
+    maker: 'JEEP',
+    mileage: 'Facilis consectetur miles',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: ` 03-11-2020 
+              09-01-2022`,
+    date: '03-02-2021',
+    condition: 'Perfect',
+  },
+  {
+    name: 'Lewisville Autoplex',
+    maker: 'FORD',
+    mileage: '204',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: 'History not found',
+    date: '04-07-2021',
+    condition: `No\nDamage\nDone`,
+  },
+  {
+    name: 'Zeeshan Ahmad',
+    maker: 'HONDA',
+    mileage: '393784',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: ` 03-11-2020 
+              09-01-2022`,
+    date: '02-15-2021',
+    condition: 'Perfect',
+  },
+  {
+    name: 'Lewisville Autoplex',
+    maker: 'JEEP',
+    mileage: 'Facilis consectetur miles',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: ` 03-11-2020 
+              09-01-2022`,
+    date: '03-02-2021',
+    condition: 'Perfect',
+  },
+  {
+    name: 'Lewisville Autoplex',
+    maker: 'FORD',
+    mileage: '204',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: 'History not found',
+    date: '04-07-2021',
+    condition: `No\nDamage\nDone`,
+  },
+  {
+    name: 'Zeeshan Ahmad',
+    maker: 'HONDA',
+    mileage: '393784',
+    city: 'Lewisville',
+    state: 'Texas',
+    vin: '1C4RJEBG0LC123070',
+    history: ` 03-11-2020 
+              09-01-2022`,
+    date: '02-15-2021',
+    condition: 'Perfect',
+  },
+];
 
 const Vehicles = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [sortModal, setSortModal] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [getDat, setGetDat] = useState(null);
 
   // range slider
@@ -119,11 +123,11 @@ const Vehicles = ({navigation}) => {
 
   const {token} = useSelector((state) => state.auth);
   useEffect(() => {
-    if (getDat === null) {
-      setData(null);
-      getData();
-      setGetDat('ok');
-    }
+    // if (getDat === null) {
+    //   setData(null);
+    //   getData();
+    //   setGetDat('ok');
+    // }
   });
 
   const getData = () => {
@@ -262,7 +266,7 @@ const Vehicles = ({navigation}) => {
       <Card containerStyle={styles.cardContainer}>
         <View style={{flexDirection: 'row'}}>
           <View style={styles.textContainer}>
-            <Text style={styles.nameStyle}>{item.dealer}</Text>
+            <Text style={styles.nameStyle}>{item.name}</Text>
             <Text style={styles.textStyle}>Make: {item.make}</Text>
             <Text style={styles.textStyle}>Mileage: {item.mileage}</Text>
             <Text style={styles.textStyle}>City: {item.location}</Text>
@@ -295,7 +299,7 @@ const Vehicles = ({navigation}) => {
               </Text>
             </View>
             <View style={styles.conditionContainer}>
-              <Text style={styles.conditionText}>{item.inspection_status}</Text>
+              <Text style={styles.conditionText}>{item.condition}</Text>
             </View>
           </View>
         </View>

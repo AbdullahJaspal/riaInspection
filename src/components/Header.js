@@ -20,7 +20,9 @@ const Header = ({type = 'antdesign', name = 'arrowleft', leftPress, title}) => {
       <Text style={styles.headerText} numberOfLines={2}>
         {title}
       </Text>
-      <Text />
+      <View style={styles.iconContainer}>
+        <Icon type={type} name={name} color={'black'} size={26} />
+      </View>
     </View>
   );
 };

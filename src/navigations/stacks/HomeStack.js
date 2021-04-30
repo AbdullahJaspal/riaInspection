@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 function HomeStack(props) {
   return (
     <Stack.Navigator initialRouteName="Home" headerMode="none">
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="userHome" component={Home} />
       <Stack.Screen name="AboutUs" component={AboutUs} />
       <Stack.Screen name="BuyerInfo" component={BuyerInfo} />
       <Stack.Screen name="ContactUs" component={ContactUs} />
