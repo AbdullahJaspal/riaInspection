@@ -34,6 +34,12 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     top: 7,
+    fontSize: 12,
+    paddingHorizontal: 10,
+    fontFamily: theme.fontFamily.bold,
+  },
+  description: {
+    top: 7,
     fontSize: 11,
     paddingBottom: 15,
     paddingHorizontal: 10,

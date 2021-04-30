@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.blackColor,
   },
   topContainer: {
-    paddingTop: 25,
-    paddingBottom: 10,
+    paddingTop: 15,
+    paddingBottom: 5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   contentBox: {
     flex: Platform.OS === 'android' ? 2 : 0.95,
     width: '90%',
-    marginTop: 20,
+    marginTop: 12,
     padding: 15,
     borderRadius: 5,
     alignSelf: 'center',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   commentContainer: {
     width: '98%',
-    marginVertical: 20,
+    marginVertical:10,
     borderWidth: 1,
     borderRadius: 3,
     alignSelf: 'center',

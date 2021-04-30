@@ -209,7 +209,6 @@ export const register = (params, onSuccess, onError) => {
 
 export const logout = (token, onSuccess, onError) => {
   return async (dispatch) => {
-    dispatch(authLoading());
     try {
       const res = await axios.post(
         `${BaseUrl}/logout`,
@@ -222,8 +221,10 @@ export const logout = (token, onSuccess, onError) => {
           },
         },
       );
+
       if (res) {
         dispatch(logoutSuccess(res));
+
         onSuccess(res);
       }
     } catch (err) {

@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.medium,
   },
   conditionContainer: {
-    flex: 1,
+    flex: 0.9,
     alignItems: 'center',
     justifyContent: 'center',
   },

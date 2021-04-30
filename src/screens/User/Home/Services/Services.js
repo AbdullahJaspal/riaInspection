@@ -18,7 +18,7 @@ const {width} = Dimensions.get('window');
 
 const enteries = [
   {
-    title: 'We are Expert',
+    title: 'We Are Experts',
     subtitle:
       'We do one thing and we do it well... vehicle inspections. We offer a variety of inspections and each inspection type requires the inspector to pass a rigours training course.',
     illustration: appImages.slider1,
@@ -42,26 +42,31 @@ const data = [
     title: '1 Stop Shop For Vehicle Inspections',
     subtitle: `Our specialty is everything vehicle inspections. Meet with one of our representatives and determine exactly what type of inspection is right for your business.`,
     img: appImages.service1,
+    button: true,
   },
   {
     title: 'Cosmetic (Interior and Exterior)',
     subtitle: `Provides condition of a vehicle's interior and exterior workings. Our expert inspection team will check for everything, from paintwork, to smoke odor and coffee stains.`,
     img: appImages.service2,
+    button: false,
   },
   {
     title: 'Electronics',
     subtitle: `Using our innovative technology and experienced inspection experts, we check all of your electrical workings. We make sure every light flickers, and every speaker booms.`,
     img: appImages.service3,
+    button: false,
   },
   {
     title: 'Mechanical',
     subtitle: `Our team can detect any abnormal codes or audible signs of malfunction through a thorough diagnosis that checks for a wide range of faults. Based on the manufacturer recall notices, Ria Inspectors will review each vehicle to validate that all recalls have been executed.`,
     img: appImages.service4,
+    button: false,
   },
   {
     title: 'Frame',
     subtitle: `A car's frame is one of the most crucial parts of a cars build. Frame damage can eliminate the value and safety of the vehicle. Ria inspections uses the latest tech and expertise to evaluate the condition of every vehicles frame.`,
     img: appImages.service5,
+    button: false,
   },
 ];
 
@@ -98,6 +103,15 @@ const Services = ({navigation}) => {
         navigation={navigation}
       />
       <View style={{flex: 1, backgroundColor: theme.colors.g1}}>
+        <View style={styles.topContainer}>
+          <Text style={[styles.inspectsText, {right: 5}]}>Why 3rd Party</Text>
+          <View style={styles.shapeView} />
+          <View style={styles.detailContainer}>
+            <Text style={[styles.inspectsText, {color: 'white'}]}>
+              Inspection
+            </Text>
+          </View>
+        </View>
         <View>
           <Carousel
             ref={carouselRef}
@@ -120,21 +134,24 @@ const Services = ({navigation}) => {
                   <Text style={[styles.subTitle, {marginVertical: 5}]}>
                     {item.subtitle}
                   </Text>
-                  <TouchableOpacity
-                    activeOpacity={0.9}
-                    style={[
-                      btnStyle('50%', 7, 15, 0).btnStyle,
-                      styles.btnStyle2,
-                    ]}
-                    onPress={() => navigation.navigate('ContactUs')}>
-                    <Text
+
+                  {item.button ? (
+                    <TouchableOpacity
+                      activeOpacity={0.9}
                       style={[
-                        btnTxtStyle().btnTxtStyle,
-                        {color: theme.colors.whiteColor, fontSize: 13},
-                      ]}>
-                      Contact Us
-                    </Text>
-                  </TouchableOpacity>
+                        btnStyle('50%', 7, 15, 0).btnStyle,
+                        styles.btnStyle2,
+                      ]}
+                      onPress={() => navigation.navigate('ContactUs')}>
+                      <Text
+                        style={[
+                          btnTxtStyle().btnTxtStyle,
+                          {color: theme.colors.whiteColor, fontSize: 13},
+                        ]}>
+                        Contact Us
+                      </Text>
+                    </TouchableOpacity>
+                  ) : null}
                 </View>
                 <View style={styles.imgView}>
                   <Image

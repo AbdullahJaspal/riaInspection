@@ -21,21 +21,86 @@ import {
   homeLoading,
 } from '../../../redux/actions/home';
 
+const ApprovedList = [
+  {
+    id: '597980634398683',
+    city: 'Lahore',
+    state: 'Punjab',
+    dealer: 'Zeeshan Ahmad',
+    VIN: '1C4RJEBG0LC123070',
+    year: '2021',
+    publishDate: '2 march 2020',
+    make: 'HONDA',
+    model: 'GLI 283',
+    mileage: '387676',
+    type: 'Car',
+    status: 'Publish',
+    hiddenBy: 'Amir',
+  },
+  {
+    id: '597980634398683',
+    city: 'Lahore',
+    state: 'Punjab',
+    dealer: 'Zeeshan Ahmad',
+    VIN: '1C4RJEBG0LC123070',
+    year: '2021',
+    publishDate: '2 march 2020',
+    make: 'HONDA',
+    model: 'GLI 283',
+    mileage: '387676',
+    type: 'Car',
+    status: 'Publish',
+    hiddenBy: 'Amir',
+  },
+];
+const PendingList = [
+  {
+    id: '597980634398683',
+    city: 'Lahore',
+    state: 'Punjab',
+    dealer: 'Zeeshan Ahmad',
+    VIN: '1C4RJEBG0LC123070',
+    year: '2021',
+    publishDate: '2 march 2020',
+    make: 'HONDA',
+    model: 'GLI 283',
+    mileage: '387676',
+    type: 'Car',
+    status: 'Publish',
+    hiddenBy: 'Amir',
+  },
+  {
+    id: '597980634398683',
+    city: 'Lahore',
+    state: 'Punjab',
+    dealer: 'Zeeshan Ahmad',
+    VIN: '1C4RJEBG0LC123070',
+    year: '2021',
+    publishDate: '2 march 2020',
+    make: 'HONDA',
+    model: 'GLI 283',
+    mileage: '387676',
+    type: 'Car',
+    status: 'Publish',
+    hiddenBy: 'Amir',
+  },
+];
+
 const Reports = ({navigation}) => {
   const [type, setType] = useState('pending');
   const [dat, setDat] = useState(null);
-  const [pendingData, setPendingData] = useState(null);
-  const [approvedData, setApprovedData] = useState(null);
+  const [pendingData, setPendingData] = useState(ApprovedList);
+  const [approvedData, setApprovedData] = useState(PendingList);
 
   const dispatch = useDispatch();
   const stateVal = useSelector((state) => state.home);
   const tokenVal = useSelector((state) => state.auth);
   const token = tokenVal.token;
   useEffect(() => {
-    if (dat === null) {
-      getData();
-      setDat('ok');
-    }
+    // if (dat === null) {
+    //   getData();
+    //   setDat('ok');
+    // }
   });
 
   const getData = () => {
@@ -109,7 +174,7 @@ const Reports = ({navigation}) => {
         />
         <RenderRow label="Make" value={item.make} bg={theme.colors.g2} />
         <RenderRow
-          label="Modal"
+          label="Model"
           value={item.model}
           bg={theme.colors.whiteColor}
         />
@@ -120,7 +185,7 @@ const Reports = ({navigation}) => {
           bg={theme.colors.whiteColor}
         />
         <View style={styles.txtRow}>
-          <Text style={{flex: 0.5, left: 15}}>Actions</Text>
+          <Text style={{flex: 0.5, left: 15}}>Action</Text>
           <View style={styles.iconsRow}>
             <Icon
               type="entypo"

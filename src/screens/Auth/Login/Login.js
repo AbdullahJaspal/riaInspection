@@ -63,7 +63,8 @@ const Login = ({navigation}) => {
         email: email,
         password: password,
       };
-      dispatch(login(params, onSuccess, onError));
+      replaceScreen('LoginUser');
+      // dispatch(login(params, onSuccess, onError));
     }
   };
 

@@ -5,6 +5,7 @@ import {
   ScrollView,
   SafeAreaView,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 import {Header} from '../../../../components/Header';
@@ -14,8 +15,7 @@ import theme from '../../../../theme';
 import {Image} from 'react-native';
 import {appImages} from '../../../../assets';
 
-const InspectsDetail = ({navigation, route}) => {
-  const {data} = route.params;
+const InspectsDetail = ({navigation}) => {
   const TwoItemRow = ({txt, value, bottomWidth = true}) => {
     return (
       <View style={styles.tableRow}>
@@ -107,31 +107,32 @@ const InspectsDetail = ({navigation, route}) => {
             <View style={{flexDirection: 'row'}}>
               <View style={styles.textContainer}>
                 <Text style={styles.nameStyle}>Vehicle Details</Text>
-                <Text style={styles.textStyle}>Location: {data.location}</Text>
-                <Text style={styles.textStyle}>Dealer:{data.dealer}</Text>
-                <Text style={styles.textStyle}>Year: {data.year}</Text>
-                <Text style={styles.textStyle}>Vin: {data.vin}</Text>
-                <Text style={styles.textStyle}>Make: {data.make}</Text>
-                <Text style={styles.textStyle}>Mileage: {data.mileage}</Text>
-                <Text style={styles.textStyle}>Model: {data.model}</Text>
+                <Text style={styles.textStyle}>Location: Lahore</Text>
+                <Text style={styles.textStyle}>Dealer: Arslan</Text>
+                <Text style={styles.textStyle}>Year: 2020</Text>
+                <Text style={styles.textStyle}>Vin: 1C4RJEBG0LC123070</Text>
+                <Text style={styles.textStyle}>Make: JEEP</Text>
+                <Text style={styles.textStyle}>Mileage: 38759</Text>
+                <Text style={styles.textStyle}>Model: 3SUV 3.6L V6</Text>
                 <Text style={styles.textStyle}>
-                  Submission Date: {data.publish_date}
+                  Submission Date: 27 Feb 2020
                 </Text>
-                <Text style={styles.textStyle}>
-                  Vehicle Type: {data.vehicleType}
-                </Text>
+                <Text style={styles.textStyle}>Vehicle Type: Texi</Text>
                 <Text style={styles.textStyle}>
                   Color:
                   <Text
                     style={{
-                      backgroundColor: data.color,
-                      width: '20%',
-                      color: data.color,
+                      backgroundColor: 'blue',
+                      color: 'blue',
+                      width: '50%',
                     }}>
-                    {data.color}
+                    blue
                   </Text>
                 </Text>
-                <Text style={styles.textStyle}>{data.history}</Text>
+                <Text style={styles.textStyle}>
+                  History: 03-11-2020 {'\n'}
+                  {'\t'} {'\t'} {'\t'} {'\t'} 09-01-2022
+                </Text>
               </View>
               <View
                 style={{flex: 0.4, backgroundColor: theme.colors.blackColor}}>
@@ -155,24 +156,16 @@ const InspectsDetail = ({navigation, route}) => {
               </Text>
             </View>
             <View style={styles.tableBox}>
-              <TwoItemRow
-                txt="Front Bumper Cover"
-                value={data.front_bumper_cover}
-              />
-              <TwoItemRow txt="Hood" value={data.hood} />
-              <TwoItemRow txt="Roof" value={data.roof} />
-              <TwoItemRow txt="Rear Bumper" value={data.rear_bumper} />
-              <TwoItemRow
-                txt="Cladding Mirror housing"
-                value={data.cladding_rear_bumper}
-              />
-              <TwoItemRow
-                txt={'Deck/Liftgate/Tailgate'}
-                value={data.deck_lift_taligate}
-                bottomWidth={false}
-              />
+              <TwoItemRow txt="Front Bumper" value="Original" />
+              <TwoItemRow txt="Hood" value="Original" />
+              <TwoItemRow txt="Roof" value="Original" />
+              <TwoItemRow txt="Rear Bumper" value="Original" />
+              <TwoItemRow txt="Cross Member" value="Original" />
+              <TwoItemRow txt="Deck/Liftgate/Tailgate" value="Original" />
+              <TwoItemRow txt="Full Car" value="Full Repaint" />
             </View>
             <View style={styles.tableBox}>
+              <TitleRow txt="Exterior Body" value="Left" value2="Right" />
               <ThreeItemRow txt="Fender" value="Original" value2="Original" />
               <ThreeItemRow
                 txt="Front Door"
@@ -180,7 +173,7 @@ const InspectsDetail = ({navigation, route}) => {
                 value2="Original"
               />
               <ThreeItemRow
-                txt="Reader Door"
+                txt="Rear Door"
                 value="Original"
                 value2="Original"
               />
@@ -190,10 +183,16 @@ const InspectsDetail = ({navigation, route}) => {
                 value2="Original"
               />
               <ThreeItemRow
+                txt="Cab Corner"
+                value="Original"
+                value2="Original"
+              />
+              <ThreeItemRow
                 txt="Quarter Panel"
                 value="Original"
                 value2="Original"
               />
+              <ThreeItemRow txt="Besides" value="Original" value2="Original" />
               <ThreeItemRow
                 txt="Roof Rail"
                 value="Original"
@@ -210,11 +209,6 @@ const InspectsDetail = ({navigation, route}) => {
             </View>
             <View style={styles.tableBox}>
               <TwoItemRow txt="Rear Body pannel" value="Original" />
-              <TwoItemRow
-                txt="Bracket/Breaking"
-                value="Original"
-                bottomWidth={false}
-              />
             </View>
             <View style={styles.tableBox}>
               <TitleRow txt="Inner Body" value="Left" value2="Right" />
@@ -258,29 +252,71 @@ const InspectsDetail = ({navigation, route}) => {
               </Text>
             </View>
             <View style={styles.tableBox}>
-              <TwoItemRow txt="Core Support" value={data.core_support} />
-              <TwoItemRow txt="Cross Member" value={data.cross_member} />
-              <TwoItemRow
-                txt="Cowl Panel/Firewall"
-                value={data.cowl_pannel_firewall}
-                bottomWidth={false}
-              />
+              <TwoItemRow txt="Core Support" value="Welded" />
             </View>
             <View style={styles.tableBox}>
-              <TitleRow txt="Engine Bay" value="Left" value2="Right" />
               <ThreeItemRow
                 txt="Strut Tower/Apron"
-                value={data.strut_tower_apron}
-                value2={data.right_strut_tower_apron}
+                value="Original"
+                value2="Original"
               />
               <ThreeItemRow
                 txt="Frame Rail (Part)"
-                value={data.frame_rail}
-                value2={data.right_frame_rail}
+                value="Original"
+                value2="Original"
                 bottomWidth={false}
               />
             </View>
           </Card>
+          <Card containerStyle={styles.tableCard}>
+            <View style={styles.headingContainer}>
+              <Text style={styles.headingText}>Extra Details</Text>
+            </View>
+
+            <View style={styles.showupCheck}>
+              <Icon
+                type="antdesign"
+                name="checksquare"
+                iconStyle={styles.smallIcon}
+              />
+              <Text style={styles.rowTxt}> Show Up</Text>
+            </View>
+            <View style={styles.tableBox}>
+              <TwoItemRow txt="Interior Scrap and Scratches" value="none" />
+              <TwoItemRow txt="Exterior Scrap and Scratches" value="none" />
+              <TwoItemRow
+                txt="Interior Discoloration and stains"
+                value="none"
+              />
+              <TwoItemRow
+                txt="Exterior Discoloration and stains	"
+                value="none"
+              />
+              <TwoItemRow txt="Smell" value="none" />
+              <TwoItemRow txt="Hail damage	" value="none" bottomWidth={false} />
+            </View>
+            <Card containerStyle={styles.tableCard}>
+              <View style={styles.headingContainer}>
+                <Text style={styles.headingText}>
+                  Additional Notes from Inspector
+                </Text>
+              </View>
+
+              <TextInput
+                placeholder={'Not Available!'}
+                placeholderTextColor={theme.colors.grayColor}
+                inputType="default"
+                multiline
+                capitalize={'none'}
+                onChangeText={(text) => {
+                  console.log(text);
+                }}
+                editable={false}
+                style={styles.inputText}
+              />
+            </Card>
+          </Card>
+
           <Image
             source={appImages.inspectsCertificate}
             resizeMode="contain"
@@ -297,7 +333,7 @@ const InspectsDetail = ({navigation, route}) => {
               ]}
               onPress={() => console.log('pressed')}>
               <Text style={[btnTxtStyle().btnTxtStyle, styles.txt2ndStyle]}>
-                Download Cirtificate
+                Download Certificate
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -319,7 +355,7 @@ const InspectsDetail = ({navigation, route}) => {
             Inspection, LLC’s standard terms and conditions and disclaimer which
             can be found on its website at:{' '}
             <Text
-              onPress={() => navigation.navigate('Disclaimer')}
+              // onPress={() => navigation.navigate('BuyerInfo')}
               style={styles.descStyle1}>
               Disclaimer{'\n'}
             </Text>
